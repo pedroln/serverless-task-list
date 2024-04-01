@@ -43,15 +43,15 @@ Funcionalidades:
 - Em seguida, iniciar o framework Serverless para que o projeto rode na AWS utilizando o comando
 <blockquote> "serverless deploy"
   </blockquote>
-- Após todo o processo, toda a aplicação Serverless já estará montada na AWS e o terminal retornará os links que serão utilizados nos endpoints, podendo ser utilizados no Postman, ou na parte de API Gateway que estará disponível na AWS do usuário na região SA-EAST-
+- Após todo o processo, toda a aplicação Serverless já estará montada na AWS e o terminal retornará os links que serão utilizados nos endpoints, podendo ser utilizados no Postman, ou na parte de API Gateway que estará disponível na AWS do usuário na região SA-EAST
 
 <h5> 
   
 - Abaixo está listado as rotas e os bodys em JSON (para as requisições que exigem uma inserção do mesmo) de modo que a requisição seja feita com sucesso para cada requisito (e também para dar trigger em cada exceção/validação que foi criada)</h5>
 
-- <strong>LISTAGEM DE TODAS AS TASKS - ROTA - GET</strong> 
-    <blockquote>**url**/tasks/</blockquote>
-Caso a base de dados já possua alguma Task, será listado as informações de todas as Tasks
+  - <strong>LISTAGEM DE TODAS AS TASKS - ROTA - GET</strong> 
+      <blockquote>**url**/tasks/</blockquote>
+  Caso a base de dados já possua alguma Task, será listado as informações de todas as Tasks
 
 - <strong>LISTAGEM DE TASKS FILTRADAS POR STATUS - ROTA - GET</strong> 
     <blockquote>**url**/tasks/getTasksByStatus + **Parametros da Query** </blockquote>
