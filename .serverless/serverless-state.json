@@ -200,7 +200,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/todos/dev/1711920094417-2024-03-31T21:21:34.417Z/todos.zip"
+                "S3Key": "serverless/todos/dev/1711953438986-2024-04-01T06:37:18.986Z/todos.zip"
               },
               "Handler": "dist/lambda.handler",
               "Runtime": "nodejs16.x",
@@ -224,14 +224,14 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersionhs469pRy3roiZam0D6y6PZ395pbK95kWPFi6l2vCM": {
+          "AppLambdaVersionOHxN3HBqU4GtcAHcgajyR7FqoxktMSyRCkL7dNyoATQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "n1GZMwX83NPBwVPypxJljbmWpDxy97woMQQJuYr0aa4="
+              "CodeSha256": "m42LzUPVs0qFdoI4xoHTH/1bsNaGj6lECORCf2OtYIU="
             }
           },
           "ApiGatewayRestApi": {
@@ -449,7 +449,7 @@
               "AppLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1711920065236": {
+          "ApiGatewayDeployment1711953409670": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -536,7 +536,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionhs469pRy3roiZam0D6y6PZ395pbK95kWPFi6l2vCM"
+              "Ref": "AppLambdaVersionOHxN3HBqU4GtcAHcgajyR7FqoxktMSyRCkL7dNyoATQ"
             },
             "Export": {
               "Name": "sls-todos-dev-AppLambdaFunctionQualifiedArn"
@@ -720,7 +720,7 @@
         "timeout": 6,
         "runtime": "nodejs16.x",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersionhs469pRy3roiZam0D6y6PZ395pbK95kWPFi6l2vCM"
+        "versionLogicalId": "AppLambdaVersionOHxN3HBqU4GtcAHcgajyR7FqoxktMSyRCkL7dNyoATQ"
       }
     },
     "resources": {
@@ -769,10 +769,10 @@
     },
     "layers": {},
     "isDashboardMonitoringPreconfigured": false,
-    "artifact": "C:\\Users\\Pedro Nunes\\Desktop\\Projetos\\Teste Hisnek\\todo-list-serverless\\.serverless\\todos.zip"
+    "artifact": "C:\\Users\\Pedro Nunes\\Desktop\\Projetos\\Teste Hisnek\\serverless-task-list\\.serverless\\todos.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/todos/dev/1711920094417-2024-03-31T21:21:34.417Z",
+    "artifactDirectoryName": "serverless/todos/dev/1711953438986-2024-04-01T06:37:18.986Z",
     "artifact": "todos.zip"
   }
 }

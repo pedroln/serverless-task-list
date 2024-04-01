@@ -1,5 +1,6 @@
 import { IsOptional, IsString, IsNotEmpty} from 'class-validator';
 
+
 export class CreateTaskDto {
   @IsString()
   @IsNotEmpty({
@@ -40,3 +41,4 @@ export class SearchTaskDto {
 })
   statusTask: string;
 }
+

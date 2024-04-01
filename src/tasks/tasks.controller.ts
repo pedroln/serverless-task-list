@@ -1,5 +1,5 @@
 import { TasksService } from './tasks.service';
-import { Controller, Get, Post, Delete, Body, Param, Put, Query} from '@nestjs/common';
+import { Controller, Get, Post, Delete, Body, Param, Put, Query } from '@nestjs/common';
 
 import  Task from './interface'
 import { CreateTaskDto, UpdateTaskDto } from './dtos/tasks.dto';
@@ -14,12 +14,17 @@ export class TasksController {
     return await this.TasksService.getTasks();
   }
 
+  @Get('getTaskById/:id')
+  async getTaskById(@Param('id') id : string): Promise<Task> {
+    return await this.TasksService.getTask(id);
+  }
+
   @Post('createTask')
   async createTask(@Body() CreateTaskDto: CreateTaskDto): Promise<Task> {
     return await this.TasksService.createTask(CreateTaskDto);
   }
 
-  @Get('getTasksByStatus/')
+  @Get('getTasksByStatus')
   async getTask(@Query('status') statusTask: string): Promise<Task[]> {
     return await this.TasksService.getTasksByStatus(statusTask);
   }
