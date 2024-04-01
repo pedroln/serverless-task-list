@@ -53,9 +53,9 @@ Funcionalidades:
       <blockquote>**url**/tasks/</blockquote>
   Caso a base de dados já possua alguma Task, será listado as informações de todas as Tasks
 
-- <strong>LISTAGEM DE TASKS FILTRADAS POR STATUS - ROTA - GET</strong> 
-    <blockquote>**url**/tasks/getTasksByStatus + **Parametros da Query** </blockquote>
-Caso a base de dados já possua alguma Task, basta inserir o status como um QUERY PARAM ao testar a rota e ela irá retornar todas as Tasks que possuem esse status.
+  - <strong>LISTAGEM DE TASKS FILTRADAS POR STATUS - ROTA - GET</strong> 
+      <blockquote>**url**/tasks/getTasksByStatus + **Parametros da Query** </blockquote>
+  Caso a base de dados já possua alguma Task, basta inserir o status como um QUERY PARAM ao testar a rota e ela irá retornar todas as Tasks que possuem esse status.
 
 - <strong>CRIAÇÃO DE UMA TASK - ROTA - POST</strong> 
     <blockquote>**url**/tasks/createTask</blockquote>
@@ -83,7 +83,7 @@ Caso a base de dados já possua alguma Task, basta inserir o id de uma task exis
 
 
 - <strong>EDIÇÃO/ATUALIZAÇÃO DE UMA TASK - ROTA - PUT</strong> 
-    <blockquote>**url**/tasks/deleteTask/"idDaTask" </blockquote>
+    <blockquote>**url**/tasks/updateTask/"idDaTask" </blockquote>
 Caso a base de dados já possua alguma Task, insira o id de uma task existente após a barra (recomenda-se usar uma das rotas GET para pegar a id da task que se deseja editar), após isso insira no Body o JSON EXEMPLO:
 
  <blockquote> 
