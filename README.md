@@ -1,73 +1,100 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+<h2> CRUD DE TASKS - SERVERLESS </h2>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<h3> Requisitos que foram feitos com sucesso: </h3>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- Listagem Geral e Filtrada a partir do status da Task(GET), Criação(POST), Atualização(PUT), Deleção(DELETE) de uma Task.
 
-## Description
+- AWS Lambda para hospedando a lógica da aplicação.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+-  AWS API Gateway para expondo a API.
+  
+- Dados das tasks armazenados no DynamoDB.
 
-## Installation
+- Código programado em Typescript (NestJS).
 
-```bash
-$ npm install
-```
+- Tratamentos na parte de Criação e Update (como falta de informações da Task)
 
-## Running the app
 
-```bash
-# development
-$ npm run start
+**Conteúdo:**
 
-# watch mode
-$ npm run start:dev
+CRUD de Tasks utilizando Typescript (framework NestJS) e com o código hospedado em AWS Lambda, com sua Api exposta na AWS API Gateway e as informações guardadas no banco de dados DynamoDB.
 
-# production mode
-$ npm run start:prod
-```
+Bibliotecas utilizadas:
 
-## Test
+- Bibliotecas do NestJS
+- Aws-Lambda
+- Serverless framework
+- Aws-serverless-express
+- Aws-sdk
 
-```bash
-# unit tests
-$ npm run test
+Funcionalidades:
 
-# e2e tests
-$ npm run test:e2e
+- Para rodar o projeto: Para instalar as dependências, utilize o comando -
+  <blockquote> "npm install"
+  </blockquote>
+- Após isto, certifique-se que há um usuário IAM na AWS com as todas as permissões de administrador.
+- Adicione a chave de acesso e a chave secreta deste usuário utilizando o comando 
+<blockquote> "aws configure"
+  </blockquote>
+- Após todas as configurações e instalações, basta usar o comando, dê build no projeto com o comando
+<blockquote> 
+  "npm run build"
+  </blockquote>
+- Em seguida, iniciar o framework Serverless para que o projeto rode na AWS utilizando o comando
+<blockquote> "serverless deploy"
+  </blockquote>
+- Após todo o processo, toda a aplicação Serverless já estará montada na AWS e o terminal retornará os links que serão utilizados nos endpoints, podendo ser utilizados no Postman, ou na parte de API Gateway que estará disponível na AWS do usuário na região SA-EAST-
 
-# test coverage
-$ npm run test:cov
-```
+<h5> 
+  
+- Abaixo está listado as rotas e os bodys em JSON (para as requisições que exigem uma inserção do mesmo) de modo que a requisição seja feita com sucesso para cada requisito (e também para dar trigger em cada exceção/validação que foi criada)</h5>
 
-## Support
+- <strong>LISTAGEM DE TODAS AS TASKS - ROTA - GET</strong> 
+    <blockquote>**url**/tasks/</blockquote>
+Caso a base de dados já possua alguma Task, será listado as informações de todas as Tasks
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- <strong>LISTAGEM DE TASKS FILTRADAS POR STATUS - ROTA - GET</strong> 
+    <blockquote>**url**/tasks/getTasksByStatus + **Parametros da Query** </blockquote>
+Caso a base de dados já possua alguma Task, basta inserir o status como um QUERY PARAM ao testar a rota e ela irá retornar todas as Tasks que possuem esse status.
 
-## Stay in touch
+- <strong>CRIAÇÃO DE UMA TASK - ROTA - POST</strong> 
+    <blockquote>**url**/tasks/createTask</blockquote>
+Criação de uma task com as informações (Title, Description e StatusTask), caso nada seja inserido no campo StatusTask ele será salvo no banco de dados como "Pending".
+RETORNO: Task salva junto com seu campo único id e sua Data/Horário de criação (createdAt)
+O endpoint não permite salvar sem o campo "Title" e "Description", caso algum desses campos sejam retirados, um erro 400 retornará com a mensagem alertando do campo ausente.
+JSON EXEMPLO:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+ <blockquote> 
+           
+            {
+                "title": "Title Task",
+                "description": "Description Task",
+                "statusTask": "Done"
+            }
+            
+ </blockquote>
 
-## License
+ - <strong>DELEÇÃO DE UMA TASK - ROTA - DELETE</strong> 
+    <blockquote>**url**/tasks/deleteTask/"idDaTask" </blockquote>
+Caso a base de dados já possua alguma Task, basta inserir o id de uma task existente após a barra que a Task será deletada (recomenda-se usar uma das rotas GET para pegar a id da task que se deseja deletar)
+    RETORNOS: 
+    TASK EXISTENTE: Retorna as informações da task que foi removida.
+    TASK COM ID INEXISTENTE: Retorna erro 404 alertando o usuário de que o id inserido não existe.
 
-Nest is [MIT licensed](LICENSE).
+
+- <strong>EDIÇÃO/ATUALIZAÇÃO DE UMA TASK - ROTA - PUT</strong> 
+    <blockquote>**url**/tasks/deleteTask/"idDaTask" </blockquote>
+Caso a base de dados já possua alguma Task, insira o id de uma task existente após a barra (recomenda-se usar uma das rotas GET para pegar a id da task que se deseja editar), após isso insira no Body o JSON EXEMPLO:
+
+ <blockquote> 
+           
+            {
+                "title": "Title Task 2",
+                "description": "Description Task 2",
+                "statusTask": "Done 2"
+            }
+            
+ </blockquote>
+    RETORNOS: 
+    TASK EXISTENTE: Retorna as informações da task que foi atualizada.
+    TASK COM ID INEXISTENTE: Retorna erro 404 alertando o usuário de que o id inserido não existe.
