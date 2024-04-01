@@ -34,15 +34,15 @@ Funcionalidades:
   </blockquote>
 - Após isto, certifique-se que há um usuário IAM na AWS com as todas as permissões de administrador.
 - Adicione a chave de acesso e a chave secreta deste usuário utilizando o comando 
-<blockquote> "aws configure"
-  </blockquote>
+  <blockquote> "aws configure"
+    </blockquote>
 - Após todas as configurações e instalações, basta usar o comando, dê build no projeto com o comando
-<blockquote> 
-  "npm run build"
-  </blockquote>
+  <blockquote> 
+    "npm run build"
+    </blockquote>
 - Em seguida, iniciar o framework Serverless para que o projeto rode na AWS utilizando o comando
-<blockquote> "serverless deploy"
-  </blockquote>
+  <blockquote> "serverless deploy"
+    </blockquote>
 - Após todo o processo, toda a aplicação Serverless já estará montada na AWS e o terminal retornará os links que serão utilizados nos endpoints, podendo ser utilizados no Postman, ou na parte de API Gateway que estará disponível na AWS do usuário na região SA-EAST
 
 <h5> 
@@ -55,10 +55,10 @@ Funcionalidades:
 
   - <strong>LISTAGEM DE TASKS FILTRADAS POR STATUS - ROTA - GET</strong> 
       <blockquote>**url**/tasks/getTasksByStatus + **Parametros da Query** </blockquote>
-  Caso a base de dados já possua alguma Task, basta inserir o status como um QUERY PARAM ao testar a rota e ela irá retornar todas as Tasks que possuem esse status.
+  Caso a base de dados já possua alguma Task, basta inserir o status como um QUERY PARAM ao testar a rota e ela irá retornar todas as Tasks que possuem esse status
 
 - <strong>CRIAÇÃO DE UMA TASK - ROTA - POST</strong> 
-    <blockquote>**url**/tasks/createTask</blockquote>
+      <blockquote>**url**/tasks/createTask</blockquote>
 Criação de uma task com as informações (Title, Description e StatusTask), caso nada seja inserido no campo StatusTask ele será salvo no banco de dados como "Pending".
 RETORNO: Task salva junto com seu campo único id e sua Data/Horário de criação (createdAt)
 O endpoint não permite salvar sem o campo "Title" e "Description", caso algum desses campos sejam retirados, um erro 400 retornará com a mensagem alertando do campo ausente.
