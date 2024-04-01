@@ -56,13 +56,13 @@ Funcionalidades:
   - <strong>LISTAGEM DE TASKS FILTRADAS POR STATUS - ROTA - GET</strong> 
       <blockquote>**url**/tasks/getTasksByStatus + **Parametros da Query** </blockquote>
   Caso a base de dados já possua alguma Task, basta inserir o status como um QUERY PARAM ao testar a rota e ela irá retornar todas as Tasks que possuem esse status
-
-- <strong>CRIAÇÃO DE UMA TASK - ROTA - POST</strong> 
-      <blockquote>**url**/tasks/createTask</blockquote>
-Criação de uma task com as informações (Title, Description e StatusTask), caso nada seja inserido no campo StatusTask ele será salvo no banco de dados como "Pending".
-RETORNO: Task salva junto com seu campo único id e sua Data/Horário de criação (createdAt)
-O endpoint não permite salvar sem o campo "Title" e "Description", caso algum desses campos sejam retirados, um erro 400 retornará com a mensagem alertando do campo ausente.
-JSON EXEMPLO:
+  
+  - <strong>CRIAÇÃO DE UMA TASK - ROTA - POST</strong> 
+        <blockquote>**url**/tasks/createTask</blockquote>
+  Criação de uma task com as informações (Title, Description e StatusTask), caso nada seja inserido no campo StatusTask ele será salvo no banco de dados como "Pending".
+  RETORNO: Task salva junto com seu campo único id e sua Data/Horário de criação (createdAt)
+  O endpoint não permite salvar sem o campo "Title" e "Description", caso algum desses campos sejam retirados, um erro 400 retornará com a mensagem alertando do campo ausente.
+  JSON EXEMPLO:
 
  <blockquote> 
            
